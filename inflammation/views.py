@@ -12,7 +12,7 @@ def visualize(data_dict, title=None):
     # TODO(lesson-design) Extend to allow saving figure to file
 
     num_plots = len(data_dict)
-    fig = plt.figure( figsize=(3.0, 3.0))
+    fig = plt.figure(figsize=(3.0, 3.0))
     axes = fig.add_subplot()
 
     for name, data in data_dict.items():
@@ -21,5 +21,5 @@ def visualize(data_dict, title=None):
     if title:
         plt.title(title)
     fig.tight_layout()
-    
+
     plt.show()
