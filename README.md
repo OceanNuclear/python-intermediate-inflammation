@@ -29,3 +29,12 @@ The tests should be run using `pytest`, which will be introduced during the work
 - Comments should answer the "why" question, and occassionally the "what" question, 
 - never the "how" question, as the last one is answered by the code itself instead.
 - See [this blogpost](https://www.freecodecamp.org/news/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83/) for more details
+
+## Lessons about python package management learnt
+
+`python setup.py --user` # Does NOT care about venv, install in ~/.local, and will be available everywhere in your user space forever.
+
+`pip3 install .` # install to the current by copying the directory code in ./ into the lib/site-packages/ of the venv
+
+`pip3 install -e .` # install a text abspath link to the current directory (./) into the lib/site-packages/ of the venv. The -e stands for "editable".
+
