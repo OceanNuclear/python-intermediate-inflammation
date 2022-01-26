@@ -11,8 +11,9 @@ def test_load_csv_wrong_type():
     with pytest.raises(ValueError):
         error_expected = load_csv(11111) # use a number in place of a str, should raise TypeError
 
-def test_load_csv_notAFile():
-    from inflamation.models import load_csv
+def test_load_csv_not_a_file():
+    from inflammation.models import load_csv
+
     with  pytest.raises(FileNotFoundError):
         error_expected = load_csv("ARandomFileThatDefinitelyDoesntExistHere.csv")
 
