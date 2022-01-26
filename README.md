@@ -23,3 +23,9 @@ Several tests have been implemented already, some of which are currently failing
 These failing tests set out the requirements for the additional code to be implemented during the workshop.
 
 The tests should be run using `pytest`, which will be introduced during the workshop.
+
+## Takeaway
+
+- Comments should answer the "why" question, and occassionally the "what" question, 
+- never the "how" question, as the last one is answered by the code itself instead.
+- See [this blogpost](https://www.freecodecamp.org/news/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83/) for more details

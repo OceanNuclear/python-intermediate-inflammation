@@ -12,8 +12,13 @@ def main(args):
     The Controller is responsible for:
     - selecting the necessary models and views for the current task
     - passing data between models and views
+
+    Parameters
+    ----------
+    args: an argparse object with the attribute infile containing a LIST of strings,
+          each string representing an input file's name.
     """
-    in_file = list(args.infiles)  # force it into a list
+    in_file = list(args.infiles)  # force it into a list if it's not provided as an iterable.
 
     for filename in in_file:
         inflammation_data = models.load_csv(filename)

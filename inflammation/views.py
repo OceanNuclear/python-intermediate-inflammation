@@ -1,7 +1,6 @@
 """Module containing code for plotting inflammation data."""
 
 from matplotlib import pyplot as plt
-import numpy as np
 
 
 def visualize(data_dict, title=None):
@@ -11,7 +10,7 @@ def visualize(data_dict, title=None):
     """
     # TODO(lesson-design) Extend to allow saving figure to file
 
-    num_plots = len(data_dict)
+    # num_plots = len(data_dict)
     fig = plt.figure(figsize=(3.0, 3.0))
     axes = fig.add_subplot()
 
