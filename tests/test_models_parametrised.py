@@ -40,12 +40,12 @@ nan = float('nan')
         (
             'hello',
             None,
-            TypeError,
+            ValueError,
         ),
         (
             3,
             None,
-            TypeError,
+            ValueError,
         ),
         (
             [[1, 2, 3], [4, 5, 6], [7, 8, 9]],
