@@ -44,6 +44,54 @@ def daily_min(data):
     """
     return np.min(data, axis=0)
 
+def patient_normalise(data):
+    """Normalise patient data from a 2D inflammation data array."""
+    if not isinstance(data, np.ndarray):
+        raise TypeError('Data input should be ndarray!')
+    if len(data.shape) != 2:
+        raise ValueError('Inflammation array should be 2-dimensional!')
+    if np.any(data < 0):
+        raise ValueError('Inflammation values should be non-negative!')
+
+    cleaned_data = np.nan_to_num(data)
+    patient_max = np.max(cleaned_data, axis=1)
+    with np.errstate(divide='ignore'):
+        normed_data = cleaned_data / patient_max[:, np.newaxis]
+    return np.nan_to_num(normed_data)
+
+class Observation:
+    def __init__(self, day, value):
+        self.day = day
+        self.value = value
+
+    def __str__(self):
+        return str(self.value)
+
+class Person:
+    def __init__(self, name,):
+        self.name = name
+
+    def __str__(self):
+        return self.name
+
+class Patient(Person):
+    """A patient in an inflammation study."""
+    def __init__(self, name, observations=None):
+        super().__init__(name)
+        self.obervations = observations if observations is not None else []
+        self.observations = []
+
+    def add_observation(self, value, day=None):
+        if day is None:
+            try:
+                day = self.observations[-1].day + 1
+            except IndexError:
+                day = 0
+
+        new_observation = Observation(day, value)
+
+        self.observations.append(new_observation)
+        return new_observation
 
 # TODO(lesson-design) Add Patient class
 # TODO(lesson-design) Implement data persistence
